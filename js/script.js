@@ -36,8 +36,8 @@ function addBubble(row, bubble) {
 }
 
 /**
- * Create new bubble element with album data.
- * TODO: Make this element a clickable Album when in use.
+ * Create new bubble element with required data.
+ * TODO: Make this element a clickable when in use.
  * @returns object
  */
 function createBubble() {
@@ -172,7 +172,6 @@ function scaleElement(element) {
 
     return percentage
 }
-
 
 // scaleBubblesWithSideOffset()
 
