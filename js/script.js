@@ -127,7 +127,7 @@ gallery.onmousemove = e => {
     moveX = xPosition + xDistance
     moveY = yPosition + yDistance
 
-    scaleBubblesWithSideOffset()
+    // scaleBubblesWithSideOffset()
 
     gallery.animate({
         transform: `translate(${moveX}px, ${moveY}px)`
