@@ -40,7 +40,7 @@
     height: var(--bubble-width);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    box-shadow: 0 2px 20px #b0b0b0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.41);
     background-size: cover;
     opacity: 0;
     transition: 300ms ease;
