@@ -42,12 +42,6 @@ const shops = [
         ]
     },
     {
-        name: 'Travel companion',
-        pictures: [
-            'https://media.timeout.com/images/105302793/image.jpg',
-        ]
-    },
-    {
         name: 'Revolution',
         pictures: [
             'https://media.timeout.com/images/105302793/image.jpg',

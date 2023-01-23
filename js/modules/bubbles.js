@@ -4,14 +4,16 @@ export class BubbleInterface {
     constructor(containerId = 'gallery', bubbles = []) {
         this.gallery = document.getElementById(containerId)
 
-        console.log(this.gallery)
-
         this.createBubbleElementsWithRowsAndColumns(bubbles)
         this.createMovableGallery(this.gallery)
     }
 
     createBubbleElementsWithRowsAndColumns(bubbles) {
-        const bubblesLimitPerRow = 7
+        /**
+         * Grab the square root of the amount of bubbles.
+         * This will create more even rows and columns.
+         */
+        const bubblesLimitPerRow = Math.floor(Math.sqrt(bubbles.length))
 
         for (const key in bubbles) {
             let rowToAddBubbleTo = null
@@ -24,7 +26,9 @@ export class BubbleInterface {
 
             for (let a = 0; a < this.rows.length; a++) {
                 if (this.rows[a].bubblesAmount > bubblesLimitPerRow && this.rows[a+1] === undefined) {
-                    this.createRow([bubbles[key]])
+                    this.createRow()
+                    rowToAddBubbleTo = this.rows[this.rows.length-1]
+                    break
                 }
 
                 if (this.rows[a].bubblesAmount > bubblesLimitPerRow) {
@@ -54,7 +58,7 @@ export class BubbleInterface {
         return element
     }
 
-    createRow(bubbles) {
+    createRow(bubbles = []) {
         // Create row element.
         const rowElement = document.createElement('div')
         rowElement.classList.add('row')
