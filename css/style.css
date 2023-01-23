@@ -69,6 +69,9 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 30px;
+}
+
+#gallery:active {
     cursor: grabbing;
 }
 
@@ -85,9 +88,23 @@ body {
     width: 250px;
     height: 250px;
     aspect-ratio: 1 / 1;
-    background: black;
     border-radius: 50%;
     box-shadow: 0 2px 20px #b0b0b0;
+    background-size: cover;
+
+    animation: bubbleFadeIn 300ms ease-out;
+    transition: 300ms ease;
+}
+.bubble:hover {
+    transform: scale(1.1);
 }
 
+@keyframes bubbleFadeIn {
+    0% {
+        transform: scale(1.1);
+    }
 
+    100% {
+        transform: scale(1);
+    }
+}
