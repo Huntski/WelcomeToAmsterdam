@@ -91,13 +91,12 @@ body {
     border-radius: 50%;
     box-shadow: 0 2px 20px #b0b0b0;
     background-size: cover;
-
-    animation: bubbleFadeIn 300ms ease-out;
+    opacity: 0;
     transition: 300ms ease;
 }
-.bubble:hover {
-    transform: scale(1.1);
-}
+/*.bubble:hover {*/
+/*    transform: scale(1.1);*/
+/*}*/
 
 @keyframes bubbleFadeIn {
     0% {
@@ -105,6 +104,7 @@ body {
     }
 
     100% {
+        opacity: 1;
         transform: scale(1);
     }
 }

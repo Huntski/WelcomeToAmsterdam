@@ -6,6 +6,7 @@ export class BubbleInterface {
 
         this.createBubbleElementsWithRowsAndColumns(bubbles)
         this.createMovableGallery(this.gallery)
+        this.animateFadeInBubbles()
     }
 
     createBubbleElementsWithRowsAndColumns(bubbles) {
@@ -51,6 +52,7 @@ export class BubbleInterface {
     createBubble(bubble = null) {
         const element = document.createElement('div')
         element.classList.add('bubble')
+
         if (bubble) {
             element.style.backgroundImage = `url(${bubble.pictures[0]})`
         }
@@ -136,6 +138,18 @@ export class BubbleInterface {
                 duration: 300,
                 fill: 'forwards'
             })
+        }
+    }
+
+    animateFadeInBubbles() {
+        const bubbles = document.querySelectorAll('.bubble')
+        const delayInMs = 3
+
+        for (const key in bubbles) {
+            // Should be integrated directly into the css later.
+            if (typeof bubbles[key] === "object") {
+                bubbles[key].style.animation = `bubbleFadeIn 400ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards ${delayInMs * (key + 1)}ms`
+            }
         }
     }
 }
