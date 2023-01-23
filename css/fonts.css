@@ -1,0 +1,32 @@
+/**
+    Font: Lexend
+ */
+
+@font-face {
+    font-family: Lexend;
+    src: url("../fonts/lexend/Lexend-Regular.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Lexend;
+    src: url("../fonts/lexend/Lexend-Bold.ttf");
+    font-weight: bold;
+}
+
+/**
+    Font: Poppins
+ */
+
+@font-face {
+    font-family: Poppins;
+    src: url("../fonts/poppins/Poppins-Regular.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url("../fonts/poppins/Poppins-Bold.ttf");
+    font-weight: bold;
+}
+
