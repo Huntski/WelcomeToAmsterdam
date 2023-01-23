@@ -1,0 +1,33 @@
+/*
+    Components
+*/
+
+/* Search bar */
+.search-bar--dark {
+    color: white;
+    background-color: var(--color-primary-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: .3em;
+    box-shadow: 0 3px 6px rgba(52, 52, 52, 0.19);
+    font-family: Poppins, sans-serif;
+}
+
+.search-bar--dark input {
+    font-size: 1em;
+    padding: 1em 1em;
+    width: 100%;
+    color: white;
+}
+
+.search-bar--dark input::placeholder {
+    color: white;
+    font-style: italic;
+}
+
+.search-bar--dark svg {
+    height: 1.2em;
+    padding: 1em;
+}
+

@@ -26,6 +26,20 @@
 
 @font-face {
     font-family: Poppins;
+    src: url("../fonts/poppins/Poppins-Italic.ttf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url("../fonts/poppins/Poppins-SemiBoldItalic.ttf");
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Poppins;
     src: url("../fonts/poppins/Poppins-Bold.ttf");
     font-weight: bold;
 }

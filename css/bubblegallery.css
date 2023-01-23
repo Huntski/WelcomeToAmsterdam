@@ -1,6 +1,12 @@
 :root {
     --gallery-gap: 30px;
-    --bubble-width: 300px;
+    --bubble-width: 200px;
+}
+
+.move-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #gallery {

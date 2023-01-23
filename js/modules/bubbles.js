@@ -2,11 +2,15 @@ export class BubbleInterface {
     rows = []
 
     constructor(containerId = 'gallery', bubbles = []) {
-        this.gallery = document.getElementById(containerId)
+        try {
+            this.gallery = document.getElementById(containerId)
 
-        this.createBubbleElementsWithRowsAndColumns(bubbles)
-        this.createMovableGallery(this.gallery)
-        this.animateFadeInBubbles()
+            this.createBubbleElementsWithRowsAndColumns(bubbles)
+            this.createMovableGallery(this.gallery)
+            this.animateFadeInBubbles()
+        } catch (e) {
+            console.log(e)
+        }
     }
 
     createBubbleElementsWithRowsAndColumns(bubbles) {
@@ -108,19 +112,19 @@ export class BubbleInterface {
 
         let mouseDown
 
-        gallery.onmousedown = e => {
+        document.body.onmousedown = e => {
             xMouseDownAt = e.clientX
             yMouseDownAt = e.clientY
             mouseDown = true
         }
 
-        gallery.onmouseup = e => {
+        document.body.onmouseup = e => {
             mouseDown = false
             xPosition = moveX
             yPosition = moveY
         }
 
-        gallery.onmousemove = e => {
+        document.body.onmousemove = e => {
             // Check if mouse is pressed down.
             if (!mouseDown) return
 

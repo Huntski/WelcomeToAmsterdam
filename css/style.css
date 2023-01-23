@@ -1,25 +1,41 @@
 @import 'reset.css';
 @import 'bubblegallery.css';
 @import 'fonts.css';
+@import 'components.css';
 
 :root {
     --color-primary-dark: #343434;
+
+    --color-red-normal: #F54949;
+    --color-gold-normal: #D2A348;
+    --color-blue-normal: #004CA6;
 }
 
 /**
-    Global changes
+    Global Changes
  */
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
+    width: 100vw;
     padding: 0;
     margin: 0;
-    overflow: hidden;
     font-family: Lexend, Poppins, Helvetica, Arial, sans-serif;
     background: linear-gradient(to bottom right, #ffffff, #f1f1f1);
+}
+
+button, input {
+    border: none;
+    background: none;
+}
+
+input {
+    font-family: Poppins, Lexend, sans-serif;
+}
+
+button {
+    font-family: Lexend, Poppins, sans-serif;
+    cursor: pointer;
 }
 
 a {
@@ -27,22 +43,27 @@ a {
 }
 
 /**
-    Main navigation
+    Main Navigation
  */
 
 .main-nav {
     position: fixed;
+    display: flex;
+    z-index: 3;
+    justify-content: center;
+    left: 0;
+    right: 0;
     bottom: 30px;
-    background: #f2f2f2;
-    border-radius: 30em;
-    padding: 1.2em 1.4em;
-    box-shadow: 0 3px 15px rgba(63, 63, 63, 0.32);
 }
 
 .main-nav ul {
     display: flex;
     align-items: center;
     gap: 2em;
+    background: #f2f2f2;
+    border-radius: 30em;
+    padding: .6em 1.4em;
+    box-shadow: 0 3px 15px rgba(63, 63, 63, 0.32);
 }
 
 .main-nav a {
@@ -54,7 +75,7 @@ a {
 .main-nav a.active {
     background-color: var(--color-primary-dark);
     color: white;
-    padding: 20px 30px;
+    padding: 15px 20px;
     border-radius: 30em;
 }
 .main-nav a:not(.active) {
@@ -66,18 +87,162 @@ a {
 .main-nav span {
     font-size: 1em;
     display: none;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 .main-nav a.active span {
     display: block;
 }
 
 .main-nav svg {
-    height: 1.8em;
+    height: 1.6em;
     fill: currentColor;
 }
 .main-nav a.active svg {
     background-color: var(--color-primary-dark);
     color: white;
-    /*padding: 10px;*/
     height: 1.8em;
+}
+
+/**
+    Explore page
+ */
+
+.explore-heading {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 5em .8em 0 .8em;
+    margin-bottom: 1.3em;
+}
+
+.explore-heading__headline {
+    font-size: 2em;
+    background: white;
+    border-radius: 12px;
+    padding: .7em;
+    margin-right: auto;
+    margin-bottom: 1em;
+    box-shadow: 0 3px 6px rgba(52, 52, 52, 0.45);
+}
+
+.explore-heading__headline h1 {
+    display: block;
+    font-weight: bold;
+    padding-top: .2em;
+    text-transform: uppercase;
+}
+
+.explore-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 90%;
+    background: url('../img/amsterdam-illustration.png') bottom no-repeat;
+    background-size: 115%;
+}
+
+/*
+    Quick Actions
+*/
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .8em;
+    padding: 0 .8em;
+}
+
+.quick-actions button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+}
+
+.quick-actions img {
+    height: 1.8em;
+    margin-bottom: 1em;
+}
+
+.quick-actions span {
+    font-size: .95em;
+}
+
+.quick-actions button:first-child {
+    background: var(--color-gold-normal);
+}
+.quick-actions button:nth-child(2){
+    background: var(--color-red-normal);
+}
+.quick-actions button:last-child {
+    background: var(--color-blue-normal);
+}
+
+/*
+    Recommended Articles
+*/
+
+.recommended-articles {
+    padding: .8em;
+    display: flex;
+    flex-direction: column;
+    gap: .8em;
+}
+
+.recommended-articles article {
+    position: relative;
+    height: 5em;
+    width: 100%;
+    color: white;
+    border-radius: 12px;
+    font-size: 2em;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.recommended-articles article:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0), rgba(0, 0, 0, 0.49), #000000);
+}
+
+.recommended-articles img {
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.recommended-articles h1 {
+    font-weight: bold;
+    margin-top: .2em;
+}
+
+/*
+    Footer
+ */
+
+footer {
+    padding: 90px 0;
 }
