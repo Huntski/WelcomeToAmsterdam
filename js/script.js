@@ -1,7 +1,17 @@
-import shops from './shops.js'
+import cats from './modules/cats.js'
+import shops from './modules/shops.js'
 import {BubbleInterface} from "./modules/bubbles.js"
 
-const galleryInterface = new BubbleInterface('gallery', shops)
+const galleryElementExists = document.querySelector('#gallery')
+
+if (galleryElementExists) {
+    if (galleryElementExists.dataset.resource === 'shops') {
+        new BubbleInterface('gallery', shops)
+    } else if (galleryElementExists.dataset.resource === 'cats') {
+        new BubbleInterface('gallery', cats)
+    }
+}
+
 const sideMenu = document.querySelector('.side-menu')
 
 function toggleSideMenu() {

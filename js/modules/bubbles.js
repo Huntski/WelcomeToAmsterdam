@@ -54,11 +54,15 @@ export class BubbleInterface {
     }
 
     createBubble(bubble = null) {
-        const element = document.createElement('div')
+        const element = document.createElement('button')
         element.classList.add('bubble')
 
-        if (bubble) {
+        if (typeof bubble === 'object') {
             element.style.backgroundImage = `url(${bubble.pictures[0]})`
+        }
+
+        if (typeof bubble === 'string') {
+            element.style.backgroundImage = `url(${bubble})`
         }
 
         return element
@@ -99,6 +103,8 @@ export class BubbleInterface {
     }
 
     createMovableGallery() {
+        document.body.style.overflow = 'hidden'
+
         const gallery = this.gallery
 
         let xMouseDownAt = 0
@@ -120,6 +126,18 @@ export class BubbleInterface {
 
         document.body.onmouseup = e => {
             mouseDown = false
+            xPosition = moveX
+            yPosition = moveY
+        }
+
+        document.body.ontouchstart = e => {
+            const touch = e.changedTouches[0]
+
+            xMouseDownAt = touch.clientX
+            yMouseDownAt = touch.clientY
+        }
+
+        document.body.ontouchend = e => {
             xPosition = moveX
             yPosition = moveY
         }
@@ -170,51 +188,4 @@ export class BubbleInterface {
             }
         }
     }
-}
-
-function scaleBubblesWithSideOffset() {
-    const bubbles = document.querySelectorAll('.bubble')
-
-    for (let i = 0; i < bubbles.length; i++) {
-        scaleElement(bubbles[i])
-    }
-}
-
-function scaleElement(element) {
-    const rect = element.getBoundingClientRect()
-
-    let percentage = 100
-    const gap = 30
-
-    if (rect.left < 50) {
-        percentage = 100 / (rect.width+gap) * (rect.width + rect.left)
-
-        if (percentage > 100) {
-            percentage = 100
-        }
-
-        if (percentage < 70) {
-            percentage = 70
-        }
-    }
-
-    if (rect.right < 50) {
-        percentage = 100 / (rect.width+gap) * (rect.width + rect.right)
-
-        if (percentage > 100) {
-            percentage = 100
-        }
-
-        if (percentage < 70) {
-            percentage = 70
-        }
-    }
-
-    element.animate({
-        transform: `scale(${percentage}%)`
-    }, {
-        fill: 'forwards'
-    })
-
-    return percentage
 }
