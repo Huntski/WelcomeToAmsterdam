@@ -9,6 +9,8 @@ export function createMovableGallery(gallery) {
     let moveY
     let mouseDown = false
 
+    centerMostMiddleBubble()
+
     gallery.ontouchmove = touchMoveEvent
     gallery.ontouchstart = touchStartEvent
     gallery.ontouchend = touchEndEvent
@@ -17,15 +19,7 @@ export function createMovableGallery(gallery) {
     gallery.onmousemove = mouseMoveEvent
     gallery.onmouseup = mouseUpEvent
 
-    document.onkeydown = e => {
-        if (e.code === 'Space') {
-            centerMostMiddleBubble()
-        }
-    }
-
     function touchStartEvent(e) {
-        console.log('Touch start event')
-
         const touch = e.changedTouches[0]
 
         xMouseDownAt = touch.clientX
@@ -33,18 +27,15 @@ export function createMovableGallery(gallery) {
     }
 
     function touchEndEvent(e) {
-        console.log('Touch end event')
-
         xPosition = moveX
         yPosition = moveY
+
+        centerMostMiddleBubble()
     }
 
     function touchMoveEvent(e) {
-        console.log('Mouse move event')
 
         const touch = e.changedTouches[0]
-
-        console.log(touch)
 
         const moveDistanceX = touch.clientX - xMouseDownAt
         const moveDistanceY = touch.clientY - yMouseDownAt
@@ -65,7 +56,6 @@ export function createMovableGallery(gallery) {
     }
 
     function mouseMoveEvent(e) {
-        console.log('Mouse down event')
         if (!mouseDown) return
 
         const moveDistanceX = e.clientX - xMouseDownAt
@@ -77,8 +67,6 @@ export function createMovableGallery(gallery) {
     function animateGalleryPosition(moveDistanceX, moveDistanceY) {
         moveX = xPosition + moveDistanceX
         moveY = yPosition + moveDistanceY
-
-        console.log(moveX, moveY)
 
         gallery.animate({
             transform: `translate(${moveX}px, ${moveY}px)`
@@ -105,7 +93,13 @@ export function createMovableGallery(gallery) {
 
             const rect = centerBubble.getBoundingClientRect()
 
-            console.log(rect)
+            const posX = rect.x + (rect.width / 2)
+            const posY = rect.y + (rect.height / 2)
+
+            const moveDistanceX = window.innerWidth / 2 - posX
+            const moveDistanceY = window.innerHeight / 2 - posY
+
+            animateGalleryPosition(moveDistanceX, moveDistanceY)
         } catch (e) {
             console.log(e)
         }
