@@ -19,10 +19,6 @@
     Global Changes
  */
 
-html {
-    /*background: linear-gradient(to bottom right, #ffffff, #f1f1f1);*/
-}
-
 body {
     min-height: 100vh;
     width: 100vw;
@@ -200,7 +196,6 @@ header {
     opacity: 1;
 }
 
-
 /**
     Main Navigation
  */
@@ -208,6 +203,7 @@ header {
 .main-nav {
     position: fixed;
     display: flex;
+    flex-direction: column;
     z-index: 3;
     justify-content: center;
     left: 0;
@@ -215,9 +211,24 @@ header {
     bottom: 30px;
 }
 
+.main-nav__actions {
+    display: flex;
+    font-size: 1em;
+}
+
+.main-nav__actions button {
+    border-radius: 3em;
+    background: var(--color-dark-tab)
+}
+
+.main-nav__actions button img {
+    width: 1em;
+}
+
 .main-nav ul {
     display: flex;
     align-items: center;
+    align-self: center;
     background: #f2f2f2;
     border-radius: 30em;
     padding: .6em;

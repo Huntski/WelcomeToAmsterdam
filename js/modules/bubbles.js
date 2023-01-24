@@ -57,6 +57,19 @@ export class BubbleInterface {
         const element = document.createElement('button')
         element.classList.add('bubble')
 
+        element.innerHTML = `
+            <div class="bubble-preview">
+                
+                <h1>Hello</h1>
+                <div></div>
+            </div>
+        `
+
+        element.onclick = e => {
+            e.target.style.zIndex = 5
+            e.target.querySelector('.bubble-preview').style.display = 'block'
+        }
+
         if (typeof bubble === 'object') {
             element.style.backgroundImage = `url(${bubble.pictures[0]})`
         }
@@ -157,6 +170,10 @@ export class BubbleInterface {
                 duration: 300,
                 fill: 'forwards'
             })
+        }
+
+        document.body.onpointerdown = e => {
+            console.log(e)
         }
 
         document.body.onmousemove = e => {
