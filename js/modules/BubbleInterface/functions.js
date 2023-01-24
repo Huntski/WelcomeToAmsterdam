@@ -87,11 +87,9 @@ export function createMovableGallery(gallery) {
         }
     }
 
-    function centerMostMiddleBubble() {
+    function moveBubbleToCenterOfScreen(bubble) {
         try {
-            const centerBubble = grabBubbleCenterOfScreen()
-
-            const rect = centerBubble.getBoundingClientRect()
+            const rect = bubble.getBoundingClientRect()
 
             const posX = rect.x + (rect.width / 2)
             const posY = rect.y + (rect.height / 2)
@@ -103,6 +101,12 @@ export function createMovableGallery(gallery) {
         } catch (e) {
             console.log(e)
         }
+    }
+
+    function centerMostMiddleBubble() {
+        const centerBubble = grabBubbleCenterOfScreen()
+
+        moveBubbleToCenterOfScreen(centerBubble)
     }
 }
 
