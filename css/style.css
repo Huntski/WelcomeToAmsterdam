@@ -19,13 +19,17 @@
     Global Changes
  */
 
+html {
+    /*background: linear-gradient(to bottom right, #ffffff, #f1f1f1);*/
+}
+
 body {
     min-height: 100vh;
     width: 100vw;
     padding: 0;
     margin: 0;
     font-family: Lexend, Poppins, Helvetica, Arial, sans-serif;
-    background: linear-gradient(to bottom right, #ffffff, #f1f1f1);
+    /*background: linear-gradient(to bottom right, #ffffff, #f1f1f1);*/
 }
 
 button, input {
@@ -100,14 +104,13 @@ header {
     position: fixed;
     z-index: 5;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 90vw;
     margin: .5rem;
     border-radius: 1rem;
     background: var(--color-dark-tab);
     box-shadow: 0 3px 15px rgba(63, 63, 63, 0.32);
-    transform: translateX(130%);
-    transition: transform 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: right 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .side-menu__header {
@@ -190,7 +193,7 @@ header {
 
 /* Show Side Menu */
 .side-menu.active {
-    transform: translateX(0);
+    right: 0;
 }
 
 .side-menu.active ~ .content-blur {
@@ -215,7 +218,6 @@ header {
 .main-nav ul {
     display: flex;
     align-items: center;
-    gap: 2em;
     background: #f2f2f2;
     border-radius: 30em;
     padding: .6em;
@@ -226,6 +228,7 @@ header {
     display: flex;
     align-items: center;
     gap: 1.2em;
+    padding: .3em 1em;
     color: var(--color-dark-tab);
 }
 
