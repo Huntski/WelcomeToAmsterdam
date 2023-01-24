@@ -42,6 +42,11 @@ button {
     cursor: pointer;
 }
 
+h2 {
+    font-family: Poppins, sans-serif;
+    font-size: 1.3em;
+}
+
 a {
     text-decoration: none;
 }
@@ -394,6 +399,30 @@ header {
 .recommended-articles h1 {
     font-weight: bold;
     margin-top: .2em;
+}
+
+/*
+    Article view page
+ */
+
+.view-article-page {
+    padding-top: 150px;
+}
+
+.view-article-page article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 1em;
+}
+
+.view-article-page img {
+    width: 80vw;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: bottom;
+    border-radius: 1em;
 }
 
 /*

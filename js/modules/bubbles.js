@@ -124,6 +124,10 @@ export class BubbleInterface {
             yPosition = moveY
         }
 
+        document.body.ontouchmove = e => {
+            console.log('touching screen')
+        }
+
         document.body.onmousemove = e => {
             // Check if mouse is pressed down.
             if (!mouseDown) return
