@@ -1,13 +1,13 @@
 import cats from './modules/cats.js'
 import shops from './modules/shops.js'
-import {BubbleInterface} from "./modules/bubbles.js"
+import BubbleInterface from "./modules/BubbleInterface"
 
-const galleryElementExists = document.querySelector('#gallery')
+const gallery = document.querySelector('#gallery')
 
-if (galleryElementExists) {
-    if (galleryElementExists.dataset.resource === 'shops') {
+if (gallery) {
+    if (gallery.dataset.resource === 'shops') {
         new BubbleInterface('gallery', shops)
-    } else if (galleryElementExists.dataset.resource === 'cats') {
+    } else if (gallery.dataset.resource === 'cats') {
         new BubbleInterface('gallery', cats)
     }
 }

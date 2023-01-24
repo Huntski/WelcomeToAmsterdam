@@ -1,4 +1,6 @@
-export class BubbleInterface {
+import {closeOpenBubbleElements, createMovableGallery} from "./functions.js"
+
+export default class BubbleInterface {
     rows = []
 
     constructor(containerId = 'gallery', bubbles = []) {
@@ -6,8 +8,9 @@ export class BubbleInterface {
             this.gallery = document.getElementById(containerId)
 
             this.createBubbleElementsWithRowsAndColumns(bubbles)
-            this.createMovableGallery(this.gallery)
             this.animateFadeInBubbles()
+
+            createMovableGallery(this.gallery)
         } catch (e) {
             console.log(e)
         }
@@ -58,16 +61,21 @@ export class BubbleInterface {
         element.classList.add('bubble')
 
         element.innerHTML = `
-            <div class="bubble-preview">
-                
+            <div class="bubble__contents">
                 <h1>Hello</h1>
                 <div></div>
             </div>
         `
 
         element.onclick = e => {
-            e.target.style.zIndex = 5
-            e.target.querySelector('.bubble-preview').style.display = 'block'
+            closeOpenBubbleElements()
+
+            e.target.style.zIndex = '5'
+            const bubbleContents = e.target.querySelector('.bubble__contents')
+
+            if (bubbleContents) {
+                bubbleContents.classList.add('open')
+            }
         }
 
         if (typeof bubble === 'object') {
@@ -109,89 +117,8 @@ export class BubbleInterface {
 
     get centerBubble() {
         const centerRow = this.rows[Math.round((this.rows.length - 1) / 2)]
-
         const bubbles = centerRow.element.getElementsByClassName('bubble')
-
         return bubbles[Math.round((bubbles.length - 1) / 2)]
-    }
-
-    createMovableGallery() {
-        document.body.style.overflow = 'hidden'
-
-        const gallery = this.gallery
-
-        let xMouseDownAt = 0
-        let yMouseDownAt = 0
-
-        let xPosition = 0
-        let yPosition = 0
-
-        let moveX
-        let moveY
-
-        let mouseDown
-
-        document.body.onmousedown = e => {
-            xMouseDownAt = e.clientX
-            yMouseDownAt = e.clientY
-            mouseDown = true
-        }
-
-        document.body.onmouseup = e => {
-            mouseDown = false
-            xPosition = moveX
-            yPosition = moveY
-        }
-
-        document.body.ontouchstart = e => {
-            const touch = e.changedTouches[0]
-
-            xMouseDownAt = touch.clientX
-            yMouseDownAt = touch.clientY
-        }
-
-        document.body.ontouchend = e => {
-            xPosition = moveX
-            yPosition = moveY
-        }
-
-        document.body.ontouchmove = e => {
-            const touch = e.changedTouches[0]
-
-            const xDistance = touch.clientX - xMouseDownAt
-            const yDistance = touch.clientY - yMouseDownAt
-
-            moveX = xPosition + xDistance
-            moveY = yPosition + yDistance
-
-            gallery.animate({
-                transform: `translate(${moveX}px, ${moveY}px)`
-            }, {
-                duration: 300,
-                fill: 'forwards'
-            })
-        }
-
-        document.body.onpointerdown = e => {
-            console.log(e)
-        }
-
-        document.body.onmousemove = e => {
-            if (!mouseDown) return
-
-            const xDistance = e.clientX - xMouseDownAt
-            const yDistance = e.clientY - yMouseDownAt
-
-            moveX = xPosition + xDistance
-            moveY = yPosition + yDistance
-
-            gallery.animate({
-                transform: `translate(${moveX}px, ${moveY}px)`
-            }, {
-                duration: 300,
-                fill: 'forwards'
-            })
-        }
     }
 
     animateFadeInBubbles() {
