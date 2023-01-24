@@ -5,7 +5,6 @@ const galleryInterface = new BubbleInterface('gallery', shops)
 const sideMenu = document.querySelector('.side-menu')
 
 function toggleSideMenu() {
-    console.log('toggle menu')
     sideMenu.classList.toggle('active')
 }
 

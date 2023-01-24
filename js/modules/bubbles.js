@@ -125,11 +125,23 @@ export class BubbleInterface {
         }
 
         document.body.ontouchmove = e => {
-            console.log('touching screen')
+            const touch = e.changedTouches[0]
+
+            const xDistance = touch.clientX - xMouseDownAt
+            const yDistance = touch.clientY - yMouseDownAt
+
+            moveX = xPosition + xDistance
+            moveY = yPosition + yDistance
+
+            gallery.animate({
+                transform: `translate(${moveX}px, ${moveY}px)`
+            }, {
+                duration: 300,
+                fill: 'forwards'
+            })
         }
 
         document.body.onmousemove = e => {
-            // Check if mouse is pressed down.
             if (!mouseDown) return
 
             const xDistance = e.clientX - xMouseDownAt
@@ -137,8 +149,6 @@ export class BubbleInterface {
 
             moveX = xPosition + xDistance
             moveY = yPosition + yDistance
-
-            // scaleBubblesWithSideOffset()
 
             gallery.animate({
                 transform: `translate(${moveX}px, ${moveY}px)`
