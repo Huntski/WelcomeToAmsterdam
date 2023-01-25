@@ -10,6 +10,7 @@ export function createMovableGallery(gallery) {
     let mouseDown = false
 
     centerMostMiddleBubble()
+    makeBubblesClickable()
 
     gallery.ontouchmove = touchMoveEvent
     gallery.ontouchstart = touchStartEvent
@@ -34,7 +35,6 @@ export function createMovableGallery(gallery) {
     }
 
     function touchMoveEvent(e) {
-
         const touch = e.changedTouches[0]
 
         const moveDistanceX = touch.clientX - xMouseDownAt
@@ -65,6 +65,8 @@ export function createMovableGallery(gallery) {
     }
 
     function animateGalleryPosition(moveDistanceX, moveDistanceY) {
+        closeOpenBubbleElements()
+
         moveX = xPosition + moveDistanceX
         moveY = yPosition + moveDistanceY
 
@@ -103,15 +105,28 @@ export function createMovableGallery(gallery) {
         }
     }
 
+    function makeBubblesClickable() {
+        const bubbles = document.querySelectorAll('.bubble')
+
+        bubbles.forEach(bubble => {
+            bubble.onclick = () => {
+                moveBubbleToCenterOfScreen(bubble)
+                closeOpenBubbleElements()
+
+                bubble.classList.add('open')
+            }
+        })
+    }
+
+    function closeOpenBubbleElements() {
+        document.querySelectorAll('.open').forEach(e => {
+            e.classList.remove('open')
+        })
+    }
+
     function centerMostMiddleBubble() {
         const centerBubble = grabBubbleCenterOfScreen()
 
         moveBubbleToCenterOfScreen(centerBubble)
     }
-}
-
-export function closeOpenBubbleElements() {
-    document.querySelectorAll('.open').forEach(e => {
-        e.classList.remove('open')
-    })
 }

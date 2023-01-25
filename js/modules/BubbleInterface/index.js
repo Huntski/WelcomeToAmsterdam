@@ -1,4 +1,4 @@
-import {closeOpenBubbleElements, createMovableGallery} from "./functions.js"
+import {createMovableGallery} from "./functions.js"
 
 export default class BubbleInterface {
     rows = []
@@ -26,16 +26,16 @@ export default class BubbleInterface {
         for (const key in bubbles) {
             let rowToAddBubbleTo = null
 
-            if (! this.rows.length) {
+            if (!this.rows.length) {
                 this.createRow([bubbles[key]])
 
                 continue
             }
 
             for (let a = 0; a < this.rows.length; a++) {
-                if (this.rows[a].bubblesAmount > bubblesLimitPerRow && this.rows[a+1] === undefined) {
+                if (this.rows[a].bubblesAmount > bubblesLimitPerRow && this.rows[a + 1] === undefined) {
                     this.createRow()
-                    rowToAddBubbleTo = this.rows[this.rows.length-1]
+                    rowToAddBubbleTo = this.rows[this.rows.length - 1]
                     break
                 }
 
@@ -60,29 +60,24 @@ export default class BubbleInterface {
         const element = document.createElement('button')
         element.classList.add('bubble')
 
-        element.innerHTML = `
-            <div class="bubble__contents">
-                <h1>Hello</h1>
-                <div></div>
-            </div>
-        `
-
-        element.onclick = e => {
-            closeOpenBubbleElements()
-
-            e.target.style.zIndex = '5'
-            const bubbleContents = e.target.querySelector('.bubble__contents')
-
-            if (bubbleContents) {
-                bubbleContents.classList.add('open')
-            }
-        }
-
         if (typeof bubble === 'object') {
             element.style.backgroundImage = `url(${bubble.pictures[0]})`
         }
 
+        /**
+         * Array of cat images.
+         * TODO: Change the array to functional object.
+         */
         if (typeof bubble === 'string') {
+            element.innerHTML = `
+                <div class="bubble__contents">
+                    <img src="${bubble}" alt="Very cute cat.">
+                
+                    <h1>Hello</h1>
+                    <div></div>
+                </div>
+            `
+
             element.style.backgroundImage = `url(${bubble})`
         }
 
