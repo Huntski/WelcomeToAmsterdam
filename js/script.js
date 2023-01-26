@@ -1,6 +1,9 @@
 import cats from './modules/cats.js'
 import shops from './modules/shops.js'
-import BubbleInterface from "./modules/bubbleinterface/index.js"
+
+console.log(cats)
+
+import BubbleInterface from "./modules/bubbleinterface.js"
 
 const gallery = document.querySelector('#gallery')
 
