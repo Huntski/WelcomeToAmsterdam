@@ -2,157 +2,98 @@ const shops = [
     {
         name: 'The Besties',
         pictures: [
-            'https://images.blue-tomato.com/is/image/bluetomato/amsterdam-sep-19-gallery-image-520x390?$b36$'
+            '4fe04986-70ec-43cd-88ec-5cf8d1df8775.jpg'
         ]
     },
     {
         name: 'Nameless',
         pictures: [
-            'https://images.ctfassets.net/biom0eqyyi6b/1zcsUu3QK84aQ60kKE04um/4089304479a7755813e0c51ea1838a4c/Toys_02.jpg?fit=fill&w=450&h=450',
+            'e62e9537-83fb-4f0c-bae8-e6626863c586.jpg',
         ]
     },
     {
         name: 'Coffee tent',
         pictures: [
-            'https://dutchreview.com/wp-content/uploads/tourist-shop-amsterdam-scaled.jpg',
+            'ff6bd258-a02d-4cca-a3fa-1f620fa30eb4.jpg',
         ]
     },
     {
         name: 'Lab',
         pictures: [
-            'https://mytravelingcam.com/wp-content/uploads/2022/03/IMG_20220329_194635-scaled.jpg',
+            'IMG_0703.jpeg',
         ]
     },
     {
         name: 'Pathway',
         pictures: [
-            'https://dxkmbl8uwuv9p.cloudfront.net/moscot/1605061390367/efe9596a-63e6-434e-98ea-1ccb6d8a7475/1.jpg',
+            'IMG_0704.jpeg',
         ]
     },
     {
         name: 'French revolution',
         pictures: [
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhHZ57cesWdnqJmBm-tMOcl9p_EkomA8iayw&usqp=CAU',
+            'IMG_0705.jpeg',
         ]
     },
     {
         name: 'Travel companion',
         pictures: [
-            'https://www.traveloffpath.com/wp-content/uploads/2022/04/amsterdam-coffee-shop-canal.jpg.webp',
+            'IMG_1236.JPG',
         ]
     },
     {
         name: 'Revolution',
         pictures: [
-            'https://media.timeout.com/images/105302793/image.jpg',
+            'IMG_1267.jpeg',
         ]
     },
     {
         name: 'Amsterdam hotline',
         pictures: [
-            'https://www.thetrainline.com/cms/media/4171/netherlands_amsterdam_shopping.jpg?mode=crop&width=1080&height=1080&quality=70',
+            'IMG_1295.jpeg',
         ]
     },
     {
         name: 'Hotpot',
         pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
+            'IMG_2451.jpeg',
         ]
     },
     {
         name: 'Hotpot',
         pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
+            'IMG_2455.jpeg',
         ]
     },
     {
         name: 'Hotpot',
         pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
+            'IMG_2456.jpeg',
         ]
     },
     {
         name: 'Hotpot',
         pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
+            'IMG_2457.jpeg',
         ]
     },    {
         name: 'Hotpot',
         pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
+            'IMG_2458.jpeg',
         ]
     },
     {
         name: 'Hotpot',
         pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
+            'IMG_2601.jpeg',
         ]
     },
     {
         name: 'Hotpot',
         pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
+            'IMG_2608.jpeg',
         ]
-    },
-    {
-        name: 'Hotpot',
-        pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
-        ]
-    },
-    {
-        name: 'Hotpot',
-        pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
-        ]
-    },
-    {
-        name: 'Hotpot',
-        pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
-        ]
-    },
-    {
-        name: 'Hotpot',
-        pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
-        ]
-    },
-    {
-        name: 'Hotpot',
-        pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
-        ]
-    },
-    {
-        name: 'Hotpot',
-        pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
-        ]
-    },
-    {
-        name: 'Hotpot',
-        pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
-        ]
-    },
-    {
-        name: 'Hotpot',
-        pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
-        ]
-    },{
-        name: 'Hotpot',
-        pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
-        ]
-    },
-    {
-        name: 'Hotpot',
-        pictures: [
-            'https://media.cntraveler.com/photos/5b033123a227d435569629af/master/pass/Athenaeum-Boekhandel-&-Nieuwscentrum__2018_CONA6.jpg',
-        ]
-    },
+    }
 ]
 
 export default shops

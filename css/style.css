@@ -13,9 +13,6 @@
 
     --color-lightblue: #54BBE7;
     --color-blue: #004CA6;
-
-    --z-front-layer: 5;
-    --z-back-layer: -1;
 }
 
 /**
@@ -426,19 +423,37 @@ header {
  */
 
 .view-article-page {
-    padding-top: 150px;
+    padding-top: 300px;
+    background: url('../img/pictures/amsterdam-huis.jpeg');
+    background-size: contain;
 }
 
-.view-article-page article {
+.opened-article {
+    background: white;
+    padding: 1em 2em;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 0 1em;
+    gap: 30px;
 }
 
-.view-article-page img {
-    width: 80vw;
+.opened-article h1 {
+    font-size: 1.6em;
+    font-weight: bold;
+    border-radius: 6px;
+    align-self: center;
+    padding: .4em 1em;
+    text-align: center;
+    box-shadow: 0 3px 30px rgba(0, 0, 0, 0.15);
+}
+
+.opened-article h2 {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.opened-article img {
+    width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
     object-position: bottom;
@@ -450,5 +465,10 @@ header {
  */
 
 footer {
-    padding: 90px 0;
+    padding: 2em 0;
+    margin-top: 50px;
+    font-size: 1em;
+    color: white;
+    text-align: center;
+    background: var(--color-dark-tab);
 }
