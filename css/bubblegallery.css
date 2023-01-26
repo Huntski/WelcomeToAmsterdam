@@ -79,7 +79,7 @@
     width: 330px;
     height: 400px;
     background: white;
-    transform: translateX(-15%);
+    transform: translateX(-55px);
     animation: bubbleOpenContents 200ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.37);
 }

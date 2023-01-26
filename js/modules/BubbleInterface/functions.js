@@ -1,4 +1,6 @@
 export function createMovableGallery(gallery) {
+    console.log(gallery)
+
     document.body.style.overflow = 'hidden'
 
     let yMouseDownAt = 0
@@ -9,9 +11,6 @@ export function createMovableGallery(gallery) {
     let moveY
     let mouseDown = false
 
-    centerMostMiddleBubble()
-    makeBubblesClickable()
-
     gallery.ontouchmove = touchMoveEvent
     gallery.ontouchstart = touchStartEvent
     gallery.ontouchend = touchEndEvent
@@ -19,6 +18,9 @@ export function createMovableGallery(gallery) {
     gallery.onmousedown = mouseDownEvent
     gallery.onmousemove = mouseMoveEvent
     gallery.onmouseup = mouseUpEvent
+
+    centerMostMiddleBubble()
+    makeBubblesClickable()
 
     function touchStartEvent(e) {
         const touch = e.changedTouches[0]
