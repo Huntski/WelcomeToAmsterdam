@@ -69,9 +69,11 @@ export default class BubbleInterface {
          * TODO: Change the array to functional object.
          */
         if (typeof bubble === 'string') {
+            const cat_picture = './img/cats/' + bubble
+
             element.innerHTML = `
                 <div class="bubble-popup">
-                    <img class="bubble-popup__picture" src="${bubble}" alt="Very cute cat.">
+                    <img class="bubble-popup__picture" src="${cat_picture}" alt="Very cute cat.">
                     <button class="like-button">
                         <span>12</span>
                     
@@ -104,7 +106,7 @@ export default class BubbleInterface {
                 </div>   
             `
 
-            element.style.backgroundImage = `url(${bubble})`
+            element.style.backgroundImage = `url(${cat_picture})`
         }
 
         return element
