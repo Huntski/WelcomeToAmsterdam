@@ -57,7 +57,7 @@ export default class BubbleInterface {
     }
 
     createBubble(bubble = null) {
-        const element = document.createElement('button')
+        const element = document.createElement('div')
         element.classList.add('bubble')
 
         if (typeof bubble === 'object') {
@@ -70,12 +70,38 @@ export default class BubbleInterface {
          */
         if (typeof bubble === 'string') {
             element.innerHTML = `
-                <div class="bubble__contents">
-                    <img src="${bubble}" alt="Very cute cat.">
-                
-                    <h1>Hello</h1>
-                    <div></div>
-                </div>
+                <div class="bubble-popup">
+                    <img class="bubble-popup__picture" src="${bubble}" alt="Very cute cat.">
+                    <button class="like-button">
+                        <span>12</span>
+                    
+                        <svg class="icon" viewBox="0 0 175 159" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M157.91 87.7452L87.5504 158.19L87.5 158.14L87.4496 158.19L17.0899 87.7452C-32.8043 37.7908 37.5555 -32.654 87.4496 17.3005L87.5 17.2501L87.5504 17.3005C137.445 -32.654 207.804 37.7908 157.91 87.7452Z" fill="white"/>
+                        </svg>
+                    </button>
+               
+                    <div class="bubble-popup__comments">
+                        <div class="comment">
+                            <img class="comment__avatar" src="./img/avatars/first-profilepic.jpeg" alt="Profile picture">
+                         
+                            <div>
+                                <h3 class="comment__username">Hannibal</h3>
+                                <p class="comment__message">OMG super cute!!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comment">
+                            <img class="comment__avatar" src="./img/avatars/ikmetkat.jpeg" alt="Profile picture">
+                         
+                            <div>
+                                <h3 class="comment__username">Wieb</h3>
+                                <p class="comment__message">Where did you find this cutie?</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <input type="text" placeholder="Comment" class="comment-input-field">
+                </div>   
             `
 
             element.style.backgroundImage = `url(${bubble})`
