@@ -20,7 +20,7 @@ function toggleSideMenu() {
 }
 
 function createToggleSideMenuEvent() {
-    const toggleElements = ['.hamburger-button', '.close-button', '.content-blur']
+    const toggleElements = ['.hamburger-button', '.button-close', '.content-blur']
 
     toggleElements.forEach(selector => {
         const element = document.querySelector(selector)

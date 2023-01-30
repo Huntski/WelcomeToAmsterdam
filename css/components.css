@@ -31,3 +31,12 @@
     padding: 1em;
 }
 
+/* Close Button */
+
+.button-close {
+    width: 2.7em;
+    height: 2.7em;
+    padding: .8em;
+    border-radius: 5px;
+    background: #424242;
+}

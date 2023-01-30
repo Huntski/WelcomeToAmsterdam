@@ -1,5 +1,5 @@
 export function createMovableGallery(gallery) {
-    console.log(gallery)
+    console.log('create gallery')
 
     document.body.style.overflow = 'hidden'
 
@@ -14,10 +14,6 @@ export function createMovableGallery(gallery) {
     gallery.ontouchmove = touchMoveEvent
     gallery.ontouchstart = touchStartEvent
     gallery.ontouchend = touchEndEvent
-
-    gallery.onmousedown = mouseDownEvent
-    gallery.onmousemove = mouseMoveEvent
-    gallery.onmouseup = mouseUpEvent
 
     centerMostMiddleBubble()
     makeBubblesClickable()
@@ -42,20 +38,22 @@ export function createMovableGallery(gallery) {
         const moveDistanceX = touch.clientX - xMouseDownAt
         const moveDistanceY = touch.clientY - yMouseDownAt
 
+        console.log('touch move')
+
         animateGalleryPosition(moveDistanceX, moveDistanceY)
     }
 
-    function mouseDownEvent(e) {
-        xMouseDownAt = e.clientX
-        yMouseDownAt = e.clientY
-        mouseDown = true
-    }
+    // function mouseDownEvent(e) {
+    //     xMouseDownAt = e.clientX
+    //     yMouseDownAt = e.clientY
+    //     mouseDown = true
+    // }
 
-    function mouseUpEvent(e) {
-        mouseDown = false
-        xPosition = moveX
-        yPosition = moveY
-    }
+    // function mouseUpEvent(e) {
+    //     mouseDown = false
+    //     xPosition = moveX
+    //     yPosition = moveY
+    // }
 
     function mouseMoveEvent(e) {
         if (!mouseDown) return
@@ -67,15 +65,23 @@ export function createMovableGallery(gallery) {
     }
 
     function animateGalleryPosition(moveDistanceX, moveDistanceY) {
+        // console.log(moveDistanceX, moveDistanceY)
+
         closeOpenBubbleElements()
 
         moveX = xPosition + moveDistanceX
         moveY = yPosition + moveDistanceY
 
+        if (isNaN(moveX) || isNaN(moveY)) {
+            console.log(xPosition, moveDistanceX)
+            console.log(yPosition, moveDistanceY)
+            console.log(moveX, moveY)
+        }
+
         gallery.animate({
             transform: `translate(${moveX}px, ${moveY}px)`
         }, {
-            duration: 300,
+            duration: 0,
             fill: 'forwards'
         })
     }
@@ -92,6 +98,8 @@ export function createMovableGallery(gallery) {
     }
 
     function moveBubbleToCenterOfScreen(bubble) {
+        console.log(typeof bubble)
+
         try {
             const rect = bubble.getBoundingClientRect()
 
@@ -107,28 +115,30 @@ export function createMovableGallery(gallery) {
         }
     }
 
-    function makeBubblesClickable() {
-        const bubbles = document.querySelectorAll('.bubble')
 
-        bubbles.forEach(bubble => {
-            bubble.onclick = () => {
-                moveBubbleToCenterOfScreen(bubble)
-                closeOpenBubbleElements()
-
-                bubble.classList.add('open')
-            }
-        })
-    }
-
-    function closeOpenBubbleElements() {
-        document.querySelectorAll('.open').forEach(e => {
-            e.classList.remove('open')
-        })
-    }
 
     function centerMostMiddleBubble() {
-        const centerBubble = grabBubbleCenterOfScreen()
+        // const centerBubble = grabBubbleCenterOfScreen()
 
-        moveBubbleToCenterOfScreen(centerBubble)
+        // moveBubbleToCenterOfScreen(centerBubble)
     }
+}
+
+export function closeOpenBubbleElements() {
+    document.querySelectorAll('.open').forEach(e => {
+
+    })
+}
+
+export function makeBubblesClickable() {
+    const bubbles = document.querySelectorAll('.bubble')
+
+    bubbles.forEach(bubble => {
+        bubble.onclick = () => {
+            // moveBubbleToCenterOfScreen(bubble)
+            closeOpenBubbleElements()
+
+            bubble.classList.add('open')
+        }
+    })
 }
