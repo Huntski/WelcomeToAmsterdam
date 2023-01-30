@@ -115,7 +115,18 @@ export function createMovableGallery(gallery) {
         }
     }
 
+    function makeBubblesClickable() {
+        const bubbles = document.querySelectorAll('.bubble')
 
+        bubbles.forEach(bubble => {
+            bubble.onclick = () => {
+                // moveBubbleToCenterOfScreen(bubble)
+                closeOpenBubbleElements()
+
+                bubble.classList.add('open')
+            }
+        })
+    }
 
     function centerMostMiddleBubble() {
         // const centerBubble = grabBubbleCenterOfScreen()
@@ -127,18 +138,5 @@ export function createMovableGallery(gallery) {
 export function closeOpenBubbleElements() {
     document.querySelectorAll('.open').forEach(e => {
 
-    })
-}
-
-export function makeBubblesClickable() {
-    const bubbles = document.querySelectorAll('.bubble')
-
-    bubbles.forEach(bubble => {
-        bubble.onclick = () => {
-            // moveBubbleToCenterOfScreen(bubble)
-            closeOpenBubbleElements()
-
-            bubble.classList.add('open')
-        }
     })
 }

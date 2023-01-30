@@ -63,13 +63,15 @@ export default class BubbleInterface {
         element.classList.add('bubble')
 
         if (typeof bubble === 'object') {
-            const shop_picture = './img/shops/' + bubble.pictures[0]
-            // element.style.backgroundImage = `url(${shop_picture})`
+            const shop_picture = './img/test-cat.jpg'
+
+            // const shop_picture = './img/shops/' + bubble.pictures[0]
+            element.style.backgroundImage = `url(${shop_picture})`
             element.innerHTML = StorePopup(shop_picture, bubble.name)
 
         }  else {
             const picture = './img/cats/' + bubble
-            // element.style.backgroundImage = `url(${picture})`
+            element.style.backgroundImage = `url(${picture})`
             element.innerHTML = CatPopup(picture)
         }
 
