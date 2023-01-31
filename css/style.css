@@ -19,7 +19,12 @@
     Global Changes
  */
 
+html, body {
+    overflow: hidden;
+}
+
 body {
+    position: relative;
     min-height: 100vh;
     width: 100vw;
     padding: 0;

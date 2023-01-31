@@ -1,18 +1,20 @@
-import {createMovableGallery} from "./functions.js"
+import {createMovableGallery, moveBubbleToCenterOfScreen} from "./functions.js"
 import {CatPopup} from "../templates/CatPopup.js";
 import {StorePopup} from "../templates/StorePopup.js";
 
 export default class BubbleInterface {
-    rows = []
 
-    constructor(containerId = 'gallery', bubbles = []) {
+    constructor(bubbles = []) {
+        this.gallery = document.getElementById('gallery')
+        this.rows = []
+
         try {
-            this.gallery = document.getElementById(containerId)
-
             this.createBubbleElementsWithRowsAndColumns(bubbles)
             this.animateFadeInBubbles()
 
-            createMovableGallery(this.gallery)
+            this.centerMostMiddleBubble()
+
+            createMovableGallery()
         } catch (e) {
             console.log(e)
         }
@@ -62,21 +64,26 @@ export default class BubbleInterface {
         const element = document.createElement('div')
         element.classList.add('bubble')
 
-        if (typeof bubble === 'object') {
-            const shop_picture = './img/test-cat.jpg'
+        element.onclick = e => {
+            if (e.target === element) {
+                element.dataset.active = "1"
+                moveBubbleToCenterOfScreen(element)
+            }
+        }
 
-            // const shop_picture = './img/shops/' + bubble.pictures[0]
+        if (typeof bubble === 'object') {
+            const shop_picture = './img/shops/' + bubble.pictures[0]
             element.style.backgroundImage = `url(${shop_picture})`
-            element.innerHTML = StorePopup(shop_picture, bubble.name)
+            element.innerHTML += StorePopup(shop_picture, bubble.name)
 
         }  else {
             const picture = './img/cats/' + bubble
             element.style.backgroundImage = `url(${picture})`
-            element.innerHTML = CatPopup(picture)
+            element.innerHTML += CatPopup(picture)
         }
 
         element.querySelector('.button-close').onclick = () => {
-            element.classList.remove('open')
+            element.dataset.active = "0"
         }
 
         return element
@@ -104,10 +111,12 @@ export default class BubbleInterface {
         this.rows.push(row)
     }
 
-    get centerBubble() {
+    centerMostMiddleBubble() {
         const centerRow = this.rows[Math.round((this.rows.length - 1) / 2)]
         const bubbles = centerRow.element.getElementsByClassName('bubble')
-        return bubbles[Math.round((bubbles.length - 1) / 2)]
+        const centerBubble = bubbles[Math.round((bubbles.length - 1) / 2)]
+
+        moveBubbleToCenterOfScreen(centerBubble)
     }
 
     animateFadeInBubbles() {
@@ -121,4 +130,5 @@ export default class BubbleInterface {
             }
         }
     }
+
 }
