@@ -1,6 +1,6 @@
 :root {
     --gallery-gap: 30px;
-    --bubble-width: 200px;
+    --bubble-width: 190px;
 }
 
 .move-container {
@@ -67,7 +67,7 @@
     position: absolute;
     z-index: 5;
     top: 0;
-    left: -55px;
+    left: -37%;
     right: 0;
     bottom: 0;
     margin: auto;

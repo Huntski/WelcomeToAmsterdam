@@ -29,6 +29,8 @@ export function createMovableGallery() {
     }
 
     function touchMoveEvent(e) {
+        closeAllBubblePopups()
+
         const touch = e.changedTouches[0]
 
         const moveDistanceX = touch.clientX - xTouchStartAt
@@ -89,4 +91,10 @@ export function usingMobileUserAgent() {
     })
 
     return isOnMobile
+}
+
+function closeAllBubblePopups() {
+    document.querySelectorAll('.bubble[data-active="1"]').forEach(element => {
+        element.dataset.active = "0"
+    })
 }
