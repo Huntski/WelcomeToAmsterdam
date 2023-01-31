@@ -1,4 +1,4 @@
-import {createMovableGallery, moveBubbleToCenterOfScreen} from "./functions.js"
+import {createMovableGallery, moveBubbleToCenterOfScreen, usingMobileUserAgent} from "./functions.js"
 import {CatPopup} from "../templates/CatPopup.js";
 import {StorePopup} from "../templates/StorePopup.js";
 
@@ -121,6 +121,13 @@ export default class BubbleInterface {
 
     animateFadeInBubbles() {
         const bubbles = document.querySelectorAll('.bubble')
+
+        if (usingMobileUserAgent()) {
+            return bubbles.forEach(bubble => {
+                bubble.style.opacity = "1"
+            })
+        }
+
         const delayInMs = 3
 
         for (const key in bubbles) {
