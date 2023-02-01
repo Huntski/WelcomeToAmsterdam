@@ -1,6 +1,7 @@
-import {createMovableGallery, moveBubbleToCenterOfScreen, usingMobileUserAgent} from "./functions.js"
-import {CatPopup} from "../templates/CatPopup.js";
-import {StorePopup} from "../templates/StorePopup.js";
+import {closeAllBubblePopups, createMovableGallery, moveBubbleToCenterOfScreen} from "./composables/MovableGallery.js"
+import {CatPopup} from "../components/CatPopup.js";
+import {StorePopup} from "../components/StorePopup.js";
+import {usingMobileUserAgent} from "./composables/UserAgent.js"
 
 export default class BubbleInterface {
 
@@ -66,6 +67,7 @@ export default class BubbleInterface {
 
         element.onclick = e => {
             if (e.target === element) {
+                closeAllBubblePopups()
                 element.dataset.active = "1"
                 moveBubbleToCenterOfScreen(element)
             }

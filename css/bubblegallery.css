@@ -66,13 +66,13 @@
     display: none;
     position: absolute;
     z-index: 5;
-    top: 0;
+    top: -20px;
     left: -37%;
     right: 0;
     bottom: 0;
     margin: auto;
     width: 330px;
-    height: 400px;
+    height: 450px;
     background: white;
     flex-direction: column;
     border-radius: 10px;
@@ -102,7 +102,7 @@
 .bubble-popup__picture {
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
-    height: 150px;
+    height: 200px;
     width: 100%;
     object-fit: cover;
 }
