@@ -12,7 +12,7 @@ function grabBottomLeftBubble() {
     return document.querySelector('.row:last-child')
 }
 
-export function moveBubbleBackToScreen() {
+export function createGalleryBoundsLimit() {
     const mostLeftBubbleRect = grabMostLeftBubble().getBoundingClientRect()
     const topRightBubbleRect = grabTopRightBubble().getBoundingClientRect()
     const bottomLeftBubbleRect = grabBottomLeftBubble().getBoundingClientRect()
@@ -37,4 +37,6 @@ export function moveBubbleBackToScreen() {
     }
 
     animateGalleryPosition(moveHorizontal, moveVertical)
+
+    return moveHorizontal || moveVertical
 }

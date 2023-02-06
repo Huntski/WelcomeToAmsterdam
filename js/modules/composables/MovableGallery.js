@@ -1,4 +1,4 @@
-import {moveBubbleBackToScreen} from "./GalleryBounds.js"
+import {createGalleryBoundsLimit} from "./GalleryBounds.js"
 
 let xTouchStartAt = 0
 let yTouchStartAt = 0
@@ -9,8 +9,6 @@ let moveY
 let gallery = document.getElementById('gallery')
 
 export function createMovableGallery() {
-    document.body.style.overflow = 'hidden'
-
     document.ontouchmove = touchMoveEvent
     document.ontouchstart = touchStartEvent
     document.ontouchend = touchEndEvent
@@ -29,7 +27,7 @@ export function createMovableGallery() {
         xPosition = moveX
         yPosition = moveY
 
-        moveBubbleBackToScreen()
+        createGalleryBoundsLimit()
     }
 
     function touchMoveEvent(e) {
@@ -54,6 +52,8 @@ export function moveBubbleToCenterOfScreen(bubble) {
         const moveDistanceX = window.innerWidth / 2 - posX
         const moveDistanceY = window.innerHeight / 2 - posY
 
+        console.log(moveDistanceX, moveDistanceY)
+
         animateGalleryPosition(moveDistanceX, moveDistanceY)
     } catch (e) {
         console.log(e)
@@ -64,9 +64,13 @@ export function grabBubbleCenterOfScreen() {
     const centerX = window.innerWidth / 2
     const centerY = window.innerHeight / 2
 
-    const centerElement = document.elementFromPoint(centerX, centerY)
+    let centerElement = document.elementFromPoint(centerX, centerY)
 
-    if (centerElement.tagName === 'BUTTON') {
+    if (centerElement.className !== 'bubble') {
+        centerElement = document.elementFromPoint(centerX-20, centerY-20)
+    }
+
+    if (centerElement.className === 'bubble') {
         return centerElement
     }
 }

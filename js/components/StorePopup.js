@@ -12,7 +12,7 @@ export function StorePopup(picture, name) {
 
             <div class="bubble-popup__actions">
                 <h2>${name}</h2>
-            
+
                 <button class="like-button">
                     <span>30</span>
                 
