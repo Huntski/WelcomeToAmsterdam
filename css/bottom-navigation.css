@@ -1,0 +1,36 @@
+.bottom-navigation {
+    position: fixed;
+    bottom: 0;
+    z-index: 3;
+    background: var(--color-dark-tab);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+}
+
+.bottom-navigation ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.bottom-navigation a {
+    /*padding: 0px;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-navigation .active img {
+    opacity: 1;
+}
+
+.bottom-navigation img {
+    padding: 20px;
+    width: 35px;
+    object-fit: cover;
+    opacity: .3;
+}
+

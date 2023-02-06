@@ -7,13 +7,11 @@ const gallery = document.querySelector('#gallery')
 
 if (gallery) {
     if (gallery.dataset.resource === 'shops') {
-        const bubbleInterface = new BubbleInterface(shops)
+        const galleryInterface = new BubbleInterface(shops)
     } else if (gallery.dataset.resource === 'cats') {
         const galleryInterface = new BubbleInterface(cats)
-        console.log(galleryInterface.rows)
     }
 }
-
 
 const sideMenu = document.querySelector('.side-menu')
 

@@ -1,0 +1,65 @@
+.headline {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    height: 90vh;
+    width: 100%;
+    background: #87DCFF;
+    overflow: hidden;
+}
+
+.headline__illustration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.headline__slogan {
+    font-family: Lexend, Helvetica, Arial, sans-serif;
+    font-size: 1.2em;
+    color: #0077A8;
+    margin-top: 130px;
+    font-weight: bold;
+}
+
+.headline__slogan h2 {
+    font-size: 2em;
+    color: white;
+}
+
+.introduction {
+    position: relative;
+    z-index: 3;
+    padding-top: 15px;
+}
+
+.introduction svg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    margin-top: -11vh;
+}
+
+.introduction__contents {
+    padding: 0 50px;
+}
+
+.introduction__contents h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 13px;
+}
+
+.introduction__contents p {
+    font-size: .8em;
+}
+
+.introduction__contents p:last-child {
+    margin-top: 10px;
+    text-align: right;
+}

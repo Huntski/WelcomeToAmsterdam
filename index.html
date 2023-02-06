@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Amsterdam Kickoff | Explore</title>
+    <title>Amsterdam Kickoff</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/landingpage.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -24,7 +26,7 @@
             <div class="side-menu__header">
                 <img class="logo" src="img/kickoff-logo-v2.svg" alt="Logo of the website, Kickoff.">
 
-                <h1 class="app-name">Kickoff</h1>
+                <h1 class="app-name">Kickoff Amsterdam</h1>
 
                 <button class="button-close">
                     <svg viewBox="0 0 63 63" fill="none" stroke="white">
@@ -51,7 +53,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index.html">
+                        <a href="explore.html">
                             <img src="img/icons/explore-icon.svg" alt="Icon of a compass.">
 
                             <span>Explore</span>
@@ -71,61 +73,52 @@
         <div class="content-blur"></div>
     </header>
 
-    <main>
-        <div class="explore-heading">
-            <div class="explore-heading__headline">
-                <h2>Discover</h2>
-                <h1>Amsterdam</h1>
+    <main class="landing-page">
+        <div class="headline">
+            <div class="headline__slogan">
+                <h1>LETS GET TO KNOW</h1>
+                <h2>AMSTERDAM</h2>
             </div>
 
-            <div class="search-bar--dark">
-                <input  id="explore-searchbar" placeholder="Search..." name="search">
-                <label for="explore-searchbar">
-                    <svg viewBox="0 0 116 116" fill="currentColor">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M70.6156 70.0136C82.6875 57.9417 82.6875 38.3694 70.6156 26.2975C58.5438 14.2257 38.9714 14.2257 26.8996 26.2975C14.8277 38.3694 14.8277 57.9417 26.8996 70.0136C38.9714 82.0854 58.5438 82.0854 70.6156 70.0136ZM82.6364 82.0344C101.347 63.3236 101.347 32.9875 82.6364 14.2767C63.9257 -4.43404 33.5895 -4.43404 14.8788 14.2767C-3.83199 32.9875 -3.83199 63.3236 14.8788 82.0344C33.5895 100.745 63.9257 100.745 82.6364 82.0344Z"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M71.6705 71.9965C75.9662 67.7007 82.9311 67.7007 87.2268 71.9965L112.227 96.9965C116.523 101.292 116.523 108.257 112.227 112.553C107.931 116.849 100.966 116.849 96.6705 112.553L71.6705 87.5529C67.3747 83.2571 67.3747 76.2923 71.6705 71.9965Z"/>
-                    </svg>
-                </label>
+            <img class="headline__illustration" src="img/illustratie-landingpage.png" alt="Illustration of houses in Amsterdam.">
+        </div>
+
+        <div class="introduction">
+            <svg viewBox="0 0 1119 965" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.17359V965H1119V0C990.829 150.789 787.684 248.204 559 248.204C330.91 248.204 128.226 151.295 0 1.17359Z" fill="#F5F5F5"/>
+                <mask id="mask0_356_29" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1119" height="943">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.17359V942.5H1119V0C990.829 150.789 787.684 248.204 559 248.204C330.91 248.204 128.226 151.295 0 1.17359Z" fill="#87DCFF"/>
+                </mask>
+                <g mask="url(#mask0_356_29)">
+                    <path d="M1041.49 303.144C950.582 161.295 708.905 199.49 562.205 199.909C436.469 200.267 295.863 129.312 147.205 199.908C-38.6186 288.154 52.7654 822.349 194.644 807.5C760.739 748.252 895.364 996.387 961.659 895.307C962.196 894.488 962.702 893.621 963.156 892.753C975.819 868.541 1166.1 497.598 1041.49 303.144Z" fill="white"/>
+                </g>
+            </svg>
+
+            <div class="introduction__contents">
+                <h3>Kickoff Amsterdam</h3>
+
+                <p>Amsterdam might be a scary place to start your new live but we and the people that live here can greatly help you!</p>
+                <p>That's why <strong>we here at kickoff</strong> have gathered all the information you need for starting out in Amsterdam.</p>
             </div>
-        </div>
-
-        <div class="quick-actions">
-            <a href="stores.html" class="quick-actions__button travel">
-                <img src="img/icons/train-icon.svg" alt="Train icon.">
-                <span>TRAVEL</span>
-            </a>
-
-            <a href="stores.html" class="quick-actions__button stores">
-                <img src="img/icons/home-icon.svg" alt="Heart icon.">
-                <span>GROCERIES</span>
-            </a>
-
-            <a href="cats.html" class="quick-actions__button cats">
-                <img src="img/icons/cat-icon.svg" alt="Cat icon.">
-                <span>CATS</span>
-            </a>
-        </div>
-
-        <div class="recommended-articles">
-            <a href="article.html">
-                <article>
-                    <img src="img/isga_photos/eyecatcher_cat.jpg" alt="A table in a cafe with a cappuccino on top.">
-                    <div>
-                        <h1>THINGS TO</h1>
-                        <h2>LOOK OUT FOR</h2>
-                    </div>
-                </article>
-            </a>
-
-            <article>
-                <img src="img/isga_photos/streetart.jpg" alt="A table in a cafe with a cappuccino on top.">
-                <div>
-                    <h1>Street</h1>
-                    <h2>ART</h2>
-                </div>
-            </article>
         </div>
     </main>
+
+    <nav class="bottom-navigation">
+        <ul>
+            <li class="active">
+                <a href="index.html"><img src="img/icons/home-icon.svg" alt="Icon of a store."></a>
+            </li>
+            <li>
+                <a href="explore.html"><img src="img/icons/explore-icon.svg" alt="Icon of a compass."></a>
+            </li>
+            <li>
+                <a href="stores.html"><img src="img/icons/shopping-cart-icon.svg" alt="Icon of a shopping cart."></a>
+            </li>
+            <li>
+                <a href="cats.html"><img src="img/icons/cat-icon.svg" alt="Icon of a cat."></a>
+            </li>
+        </ul>
+    </nav>
 
     <footer>
         <span>©2023 Kickoff Amsterdam</span>

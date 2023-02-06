@@ -1,7 +1,7 @@
 @import 'reset.css';
-@import 'bubblegallery.css';
 @import 'fonts.css';
 @import 'components.css';
+@import 'bottom-navigation.css';
 
 :root {
     --color-dark-tab: #343434;
@@ -19,10 +19,6 @@
     Global Changes
  */
 
-html, body {
-    overflow: hidden;
-}
-
 body {
     position: relative;
     min-height: 100vh;
@@ -30,7 +26,6 @@ body {
     padding: 0;
     margin: 0;
     font-family: Lexend, Poppins, Helvetica, Arial, sans-serif;
-    /*background: linear-gradient(to bottom right, #ffffff, #f1f1f1);*/
 }
 
 button, input {
@@ -54,6 +49,15 @@ h2 {
 
 a {
     text-decoration: none;
+}
+
+p {
+    font-family: Poppins, Helvetica, sans-serif;
+    line-height: 1.4;
+}
+
+strong {
+    font-weight: bold;
 }
 
 /**
@@ -190,88 +194,6 @@ header {
 
 .side-menu.active ~ .content-blur {
     opacity: 1;
-}
-
-/**
-    Main Navigation
- */
-
-.gallery-navigation {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    z-index: 3;
-    justify-content: center;
-    left: 0;
-    right: 0;
-    bottom: 30px;
-}
-
-.main-nav__actions {
-    display: flex;
-    font-size: 1em;
-}
-
-.main-nav__actions button {
-    border-radius: 3em;
-    background: var(--color-dark-tab)
-}
-
-.main-nav__actions button img {
-    width: 1em;
-}
-
-.gallery-navigation ul {
-    display: flex;
-    align-items: center;
-    align-self: center;
-    background: #f2f2f2;
-    border-radius: 30em;
-    padding: .6em;
-    box-shadow: 0 3px 15px rgba(63, 63, 63, 0.32);
-}
-
-.gallery-navigation a {
-    display: flex;
-    align-items: center;
-    gap: 1.2em;
-    padding: .3em 1em;
-    color: var(--color-dark-tab);
-}
-
-.gallery-navigation a.active {
-    background-color: var(--color-dark-tab);
-    color: white;
-    padding: 15px 20px;
-    border-radius: 30em;
-}
-
-.gallery-navigation a:not(.active) {
-    aspect-ratio: 1 / 1;
-    display: flex;
-    align-items: center;
-}
-
-.gallery-navigation span {
-    font-size: 1em;
-    display: none;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.gallery-navigation a.active span {
-    display: block;
-}
-
-.gallery-navigation svg {
-    height: 1.6em;
-    fill: currentColor;
-}
-
-.gallery-navigation a.active svg {
-    background-color: var(--color-dark-tab);
-    color: white;
-    height: 1.8em;
 }
 
 /**
