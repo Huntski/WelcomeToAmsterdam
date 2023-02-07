@@ -4,7 +4,6 @@ export function openBubblePopup(popupElement) {
     const existingPopup = document.querySelector('.bubble-popup')
 
     if (existingPopup) {
-        console.log('remove')
         existingPopup.remove()
     }
 

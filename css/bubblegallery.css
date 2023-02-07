@@ -1,4 +1,5 @@
 html, body {
+    position: relative;
     overflow: hidden;
     max-height: -moz-available;
     max-height: -webkit-fill-available;
