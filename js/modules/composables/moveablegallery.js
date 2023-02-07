@@ -1,4 +1,4 @@
-import {moveBubbleBackToScreen} from "./GalleryBounds.js"
+import {moveBubbleBackToScreen} from "./gallerybounds.js"
 
 let xTouchStartAt = 0
 let yTouchStartAt = 0
@@ -33,8 +33,6 @@ export function createMovableGallery() {
     }
 
     function touchMoveEvent(e) {
-        closeAllBubblePopups()
-
         const touch = e.changedTouches[0]
 
         const moveDistanceX = touch.clientX - xTouchStartAt

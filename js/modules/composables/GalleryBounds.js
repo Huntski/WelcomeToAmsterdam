@@ -1,4 +1,4 @@
-import {animateGalleryPosition} from "./MovableGallery.js"
+import {animateGalleryPosition} from "./moveablegallery.js"
 
 function grabMostLeftBubble() {
     return document.querySelector('.row:nth-child(2)').querySelector('.bubble:first-child')

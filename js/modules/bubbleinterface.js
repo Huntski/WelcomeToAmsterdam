@@ -1,7 +1,7 @@
-import {closeAllBubblePopups, createMovableGallery, moveBubbleToCenterOfScreen} from "./composables/MovableGallery.js"
-import {CatPopup} from "../components/CatPopup.js";
-import {StorePopup} from "../components/StorePopup.js";
-import {usingMobileUserAgent} from "./composables/UserAgent.js"
+import {closeAllBubblePopups, createMovableGallery, moveBubbleToCenterOfScreen} from "./composables/moveablegallery.js"
+import {CatPopup} from "../components/catpopup.js";
+import {StorePopup} from "../components/storepopup.js";
+import {usingMobileUserAgent} from "./composables/useragent.js"
 
 export default class BubbleInterface {
 
