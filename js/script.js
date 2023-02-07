@@ -1,7 +1,7 @@
 import cats from './store/cats.js'
 import shops from './store/shops.js'
-import BubbleInterface from "./modules/BubbleInterface.js"
-import {createToggleSideMenuEvent} from "./modules/SideMenu.js"
+import {BubbleInterface} from "./modules/bubbleinterface.js"
+import {createToggleSideMenuEvent} from "./modules/sidemenu.js"
 
 createToggleSideMenuEvent()
 

@@ -1,4 +1,4 @@
-import {checkGalleryBoundary} from "./GalleryBounds.js"
+import {checkGalleryBoundary} from "./gallerybounds.js"
 
 let xTouchStartAt = 0
 let yTouchStartAt = 0

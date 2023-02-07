@@ -1,9 +1,9 @@
-import {createMovableGallery, moveBubbleToCenterOfScreen} from "./composables/MovableGallery.js"
-import {usingMobileUserAgent} from "./composables/UserAgent.js"
-import {ViewCatPopup} from "../components/ViewCatPopup.js";
-import {openBubblePopup} from "./composables/ViewBubble.js";
+import {createMovableGallery, moveBubbleToCenterOfScreen} from "./composables/movablegallery.js"
+import {usingMobileUserAgent} from "./composables/useragent.js"
+import {CatBubblePopup} from "../components/catbubblepopup.js";
+import {openBubblePopup} from "./composables/bubblepopup.js";
 
-export default class BubbleInterface {
+export class BubbleInterface {
 
     constructor(bubbles = []) {
         this.gallery = document.getElementById('gallery')
@@ -73,7 +73,7 @@ export default class BubbleInterface {
             element.style.backgroundImage = `url(${picture})`
         }
 
-        const popupElement = ViewCatPopup(bubble)
+        const popupElement = CatBubblePopup(bubble)
 
         element.onclick = e => {
             if (e.target === element) {

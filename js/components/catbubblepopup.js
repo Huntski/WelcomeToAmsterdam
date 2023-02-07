@@ -1,6 +1,6 @@
-import {closeBubblePopup} from "../modules/composables/ViewBubble.js";
+import {closeBubblePopup} from "../modules/composables/bubblepopup.js";
 
-export function ViewCatPopup(data) {
+export function CatBubblePopup(data) {
     const nodeElement = document.createElement('div')
     nodeElement.classList.add('bubble-popup')
 
