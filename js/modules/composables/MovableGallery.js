@@ -9,6 +9,10 @@ let moveY
 let gallery = document.getElementById('gallery')
 
 export function createMovableGallery() {
+    document.ontouchmove = touchMoveEvent
+    document.ontouchstart = touchStartEvent
+    document.ontouchend = touchEndEvent
+
     gallery.ontouchmove = touchMoveEvent
     gallery.ontouchstart = touchStartEvent
     gallery.ontouchend = touchEndEvent

@@ -2,7 +2,7 @@
 @import 'fonts.css';
 @import 'components.css';
 @import 'sidemenu.css';
-@import 'bottom-navigation.css';
+@import 'bottom-actions.css';
 
 :root {
     --color-dark-tab: #343434;
@@ -298,7 +298,7 @@ header {
  */
 
 footer {
-    padding: 2em 0 9em 0;
+    padding: 2em 0 100px 0;
     font-size: 1em;
     color: white;
     text-align: center;

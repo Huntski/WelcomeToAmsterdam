@@ -1,7 +1,11 @@
-.bottom-navigation {
+.bottom-actions {
     position: fixed;
     bottom: 0;
     z-index: 5;
+    width: 100%;
+}
+
+.main-nav {
     background: var(--color-dark-tab);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -9,7 +13,7 @@
     height: 70px;
 }
 
-.bottom-navigation ul {
+.main-nav ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
@@ -17,18 +21,18 @@
     padding: 10px 0;
 }
 
-.bottom-navigation a {
+.main-nav a {
     /*padding: 0px;*/
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.bottom-navigation .active img {
+.main-nav .active img {
     opacity: 1;
 }
 
-.bottom-navigation img {
+.main-nav img {
     padding: 10px;
     width: 30px;
     object-fit: cover;
