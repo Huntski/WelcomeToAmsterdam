@@ -7,16 +7,19 @@
     position: fixed;
     z-index: 5;
     top: 0;
-    transform: translateX(150%);
-    width: 90vw;
-    margin: .5rem;
+    right: 0;
+    left: 100%;
+    width: 95vw;
+    box-sizing: border-box;
     border-radius: 1rem;
+    margin: 2.5vw auto 0 auto;
     background: var(--color-dark-tab);
     box-shadow: 0 3px 15px rgba(63, 63, 63, 0.32);
+    transition: left 100ms ease-out;
 }
 
-.side-menu[data] {
-
+.side-menu[data-open="1"] {
+    left: 0;
 }
 
 .side-menu__header {
@@ -61,9 +64,10 @@
     color: white;
     padding: 1.2em;
     border-radius: .5rem;
+    background: var(--color-dark-tab--passive);
 }
 
 .side-menu-nav img {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.5rem;
+    aspect-ratio: 1 / 1;
 }

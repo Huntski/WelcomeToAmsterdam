@@ -19,6 +19,11 @@ export function StoreBubblePopup(data) {
         </button>
 
         <div class="bubble-popup__actions">
+            <div class="bubble-popup__types">
+                <span>Japanese</span>
+                <span>Korea</span>
+            </div>
+        
             <button class="like-button">
                 <span>12</span>
             
@@ -27,11 +32,6 @@ export function StoreBubblePopup(data) {
                 </svg>
             </button>
         </div>
-    </div>
-    
-    <div class="bubble-popup__types">
-        <span>Japanese</span>
-        <span>Korea</span>
     </div>
     
     <div class="bubble-popup__info">

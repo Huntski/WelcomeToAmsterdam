@@ -10,21 +10,9 @@ export function openBubblePopup(popupElement) {
 
     gallery.parentNode.appendChild(popupElement)
 
-    document.querySelector('.bubble-popup').animate({
-        transform: `translateY(0)`
-    }, {
-        duration: 200,
-        easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
-        fill: 'forwards'
-    })
+    document.querySelector('.bubble-popup').dataset.open = "1"
 }
 
 export function closeBubblePopup() {
-    document.querySelector('.bubble-popup').animate({
-        transform: `translateY(100%)`
-    }, {
-        duration: 200,
-        easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
-        fill: 'forwards'
-    })
+    document.querySelector('.bubble-popup').dataset.open = "0"
 }

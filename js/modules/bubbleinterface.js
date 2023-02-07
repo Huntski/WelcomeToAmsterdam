@@ -66,28 +66,28 @@ export class BubbleInterface {
         const element = document.createElement('div')
         element.classList.add('bubble')
 
-        // let bubblePopupElement
+        let bubblePopupElement
 
         if (typeof bubble === 'object') {
             const shop_picture = './img/shops/' + bubble.pictures[0]
             element.style.backgroundImage = `url(${shop_picture})`
 
-            // bubblePopupElement = StoreBubblePopup(bubble)
+            bubblePopupElement = StoreBubblePopup(bubble)
         }  else {
             const picture = './img/cats/' + bubble
             element.style.backgroundImage = `url(${picture})`
 
-            // bubblePopupElement = CatBubblePopup(bubble)
+            bubblePopupElement = CatBubblePopup(bubble)
         }
 
-        // const popupElement = bubblePopupElement
+        const popupElement = bubblePopupElement
 
-        // element.onclick = e => {
-        //     if (e.target === element) {
-        //         openBubblePopup(popupElement)
-        //         moveBubbleToCenterOfScreen(element)
-        //     }
-        // }
+        element.onclick = e => {
+            if (e.target === element) {
+                openBubblePopup(popupElement)
+                moveBubbleToCenterOfScreen(element)
+            }
+        }
 
         return element
     }

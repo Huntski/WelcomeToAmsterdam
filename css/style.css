@@ -1,8 +1,8 @@
 @import 'reset.css';
 @import 'fonts.css';
 @import 'components.css';
-@import 'bottom-navigation.css';
 @import 'sidemenu.css';
+@import 'bottom-navigation.css';
 
 :root {
     --color-dark-tab: #343434;
@@ -78,7 +78,7 @@ header {
 }
 
 .logo {
-    width: 4em;
+    height: 4em;
 }
 
 /*
@@ -98,7 +98,7 @@ header {
 }
 
 .hamburger-button svg {
-    width: 1.8em;
+    width: 60%;
 }
 
 /**
@@ -178,7 +178,7 @@ header {
 }
 
 .quick-actions span {
-    font-size: .95em;
+    font-size: .8em;
 }
 
 .quick-actions .travel:first-child {

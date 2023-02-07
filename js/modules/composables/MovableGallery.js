@@ -27,7 +27,7 @@ export function createMovableGallery() {
         xPosition = moveX
         yPosition = moveY
 
-        checkGalleryBoundary()
+        // checkGalleryBoundary()
     }
 
     function touchMoveEvent(e) {
@@ -60,10 +60,14 @@ export function animateGalleryPosition(moveDistanceX, moveDistanceY) {
     moveX = xPosition + moveDistanceX
     moveY = yPosition + moveDistanceY
 
-    gallery.animate({
-        transform: `translate(${moveX}px, ${moveY}px)`
-    }, {
-        duration: 100,
-        fill: 'forwards'
-    })
+    // transform: `translate(${moveX}px, ${moveY}px)`
+
+        gallery.style.translate = `${moveX}px ${moveY}px`
+
+    // gallery.animate({
+    //     transform: `translate(${moveX}px, ${moveY}px)`,
+    // }, {
+    //     duration: 100,
+    //     fill: 'forwards'
+    // })
 }

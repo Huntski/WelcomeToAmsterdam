@@ -34,13 +34,21 @@
 /* Close Button */
 
 .button-close {
-    width: 2.7em;
-    height: 2.7em;
-    padding: .8em;
+    position: relative;
+    aspect-ratio: 1 / 1;
     border-radius: 5px;
-    background: #424242;
+    background: var(--color-dark-tab--passive);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
 }
 
-.button-close:active {
-    background: #707070;
+.button-close svg {
+    width: 15px;
+}
+
+.button-close:active,
+.button-close:focus {
+    background: var(--color-dark-tab--focus);
 }

@@ -9,8 +9,8 @@ const gallery = document.querySelector('#gallery')
 
 if (gallery) {
     if (gallery.dataset.resource === 'shops') {
-        const galleryInterface = new BubbleInterface(shops)
+        new BubbleInterface(shops)
     } else if (gallery.dataset.resource === 'cats') {
-        const galleryInterface = new BubbleInterface(cats)
+        new BubbleInterface(cats)
     }
 }
