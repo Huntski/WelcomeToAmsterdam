@@ -12,7 +12,7 @@ function grabBottomLeftBubble() {
     return document.querySelector('.row:last-child')
 }
 
-export function createGalleryBoundsLimit() {
+export function checkGalleryBoundary() {
     const mostLeftBubbleRect = grabMostLeftBubble().getBoundingClientRect()
     const topRightBubbleRect = grabTopRightBubble().getBoundingClientRect()
     const bottomLeftBubbleRect = grabBottomLeftBubble().getBoundingClientRect()

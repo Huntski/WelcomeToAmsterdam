@@ -1,7 +1,7 @@
-import {closeAllBubblePopups, createMovableGallery, moveBubbleToCenterOfScreen} from "./composables/MovableGallery.js"
-import {CatPopup} from "../components/CatPopup.js";
-import {StorePopup} from "../components/StorePopup.js";
+import {createMovableGallery, moveBubbleToCenterOfScreen} from "./composables/MovableGallery.js"
 import {usingMobileUserAgent} from "./composables/UserAgent.js"
+import {ViewCatPopup} from "../components/ViewCatPopup.js";
+import {openBubblePopup} from "./composables/ViewBubble.js";
 
 export default class BubbleInterface {
 
@@ -65,27 +65,21 @@ export default class BubbleInterface {
         const element = document.createElement('div')
         element.classList.add('bubble')
 
-        element.onclick = e => {
-            if (e.target === element) {
-                closeAllBubblePopups()
-                element.dataset.active = "1"
-                moveBubbleToCenterOfScreen(element)
-            }
-        }
-
         if (typeof bubble === 'object') {
             const shop_picture = './img/shops/' + bubble.pictures[0]
             element.style.backgroundImage = `url(${shop_picture})`
-            element.innerHTML += StorePopup(shop_picture, bubble.name)
-
         }  else {
             const picture = './img/cats/' + bubble
             element.style.backgroundImage = `url(${picture})`
-            element.innerHTML += CatPopup(picture)
         }
 
-        element.querySelector('.button-close').onclick = () => {
-            element.dataset.active = "0"
+        const popupElement = ViewCatPopup(bubble)
+
+        element.onclick = e => {
+            if (e.target === element) {
+                openBubblePopup(popupElement)
+                moveBubbleToCenterOfScreen(element)
+            }
         }
 
         return element

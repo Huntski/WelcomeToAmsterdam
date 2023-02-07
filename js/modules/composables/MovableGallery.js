@@ -1,4 +1,4 @@
-import {createGalleryBoundsLimit} from "./GalleryBounds.js"
+import {checkGalleryBoundary} from "./GalleryBounds.js"
 
 let xTouchStartAt = 0
 let yTouchStartAt = 0
@@ -9,9 +9,9 @@ let moveY
 let gallery = document.getElementById('gallery')
 
 export function createMovableGallery() {
-    document.ontouchmove = touchMoveEvent
-    document.ontouchstart = touchStartEvent
-    document.ontouchend = touchEndEvent
+    gallery.ontouchmove = touchMoveEvent
+    gallery.ontouchstart = touchStartEvent
+    gallery.ontouchend = touchEndEvent
 
     function touchStartEvent(e) {
         const touch = e.changedTouches[0]
@@ -27,11 +27,10 @@ export function createMovableGallery() {
         xPosition = moveX
         yPosition = moveY
 
-        createGalleryBoundsLimit()
+        checkGalleryBoundary()
     }
 
     function touchMoveEvent(e) {
-        closeAllBubblePopups()
 
         const touch = e.changedTouches[0]
 
@@ -73,12 +72,6 @@ export function grabBubbleCenterOfScreen() {
     if (centerElement.className === 'bubble') {
         return centerElement
     }
-}
-
-export function closeAllBubblePopups() {
-    document.querySelectorAll('.bubble[data-active="1"]').forEach(element => {
-        element.dataset.active = "0"
-    })
 }
 
 export function animateGalleryPosition(moveDistanceX, moveDistanceY) {
