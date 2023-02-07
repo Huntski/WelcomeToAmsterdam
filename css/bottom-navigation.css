@@ -28,8 +28,8 @@
 }
 
 .bottom-navigation img {
-    padding: 20px;
-    width: 35px;
+    padding: 10px;
+    width: 30px;
     object-fit: cover;
     opacity: .3;
 }

@@ -48,7 +48,6 @@ html, body {
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-size: cover;
-    opacity: 0;
     transition: 300ms ease;
 }
 

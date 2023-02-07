@@ -50,26 +50,9 @@ export function moveBubbleToCenterOfScreen(bubble) {
         const moveDistanceX = window.innerWidth / 2 - posX
         const moveDistanceY = window.innerHeight / 2 - posY
 
-        console.log(moveDistanceX, moveDistanceY)
-
         animateGalleryPosition(moveDistanceX, moveDistanceY)
     } catch (e) {
         console.log(e)
-    }
-}
-
-export function grabBubbleCenterOfScreen() {
-    const centerX = window.innerWidth / 2
-    const centerY = window.innerHeight / 2
-
-    let centerElement = document.elementFromPoint(centerX, centerY)
-
-    if (centerElement.className !== 'bubble') {
-        centerElement = document.elementFromPoint(centerX-20, centerY-20)
-    }
-
-    if (centerElement.className === 'bubble') {
-        return centerElement
     }
 }
 

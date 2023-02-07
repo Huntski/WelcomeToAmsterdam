@@ -66,28 +66,28 @@ export class BubbleInterface {
         const element = document.createElement('div')
         element.classList.add('bubble')
 
-        let bubblePopupElement
+        // let bubblePopupElement
 
         if (typeof bubble === 'object') {
             const shop_picture = './img/shops/' + bubble.pictures[0]
             element.style.backgroundImage = `url(${shop_picture})`
 
-            bubblePopupElement = StoreBubblePopup(bubble)
+            // bubblePopupElement = StoreBubblePopup(bubble)
         }  else {
             const picture = './img/cats/' + bubble
             element.style.backgroundImage = `url(${picture})`
 
-            bubblePopupElement = CatBubblePopup(bubble)
+            // bubblePopupElement = CatBubblePopup(bubble)
         }
 
-        const popupElement = bubblePopupElement
+        // const popupElement = bubblePopupElement
 
-        element.onclick = e => {
-            if (e.target === element) {
-                openBubblePopup(popupElement)
-                moveBubbleToCenterOfScreen(element)
-            }
-        }
+        // element.onclick = e => {
+        //     if (e.target === element) {
+        //         openBubblePopup(popupElement)
+        //         moveBubbleToCenterOfScreen(element)
+        //     }
+        // }
 
         return element
     }
@@ -126,19 +126,21 @@ export class BubbleInterface {
         const bubbles = document.querySelectorAll('.bubble')
 
         if (usingMobileUserAgent()) {
-            return bubbles.forEach(bubble => {
-                bubble.style.opacity = "1"
-            })
+
         }
 
-        const delayInMs = 3
+        // return bubbles.forEach(bubble => {
+        //     bubble.style.opacity = "1"
+        // })
 
-        for (const key in bubbles) {
-            // Should be integrated directly into the css later.
-            if (typeof bubbles[key] === "object") {
-                bubbles[key].style.animation = `bubbleFadeIn 400ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards ${delayInMs * (key + 1)}ms`
-            }
-        }
+        // const delayInMs = 3
+        //
+        // for (const key in bubbles) {
+        //     // Should be integrated directly into the css later.
+        //     if (typeof bubbles[key] === "object") {
+        //         bubbles[key].style.animation = `bubbleFadeIn 400ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards ${delayInMs * (key + 1)}ms`
+        //     }
+        // }
     }
 
 }

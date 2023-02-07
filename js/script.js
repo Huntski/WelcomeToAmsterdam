@@ -14,4 +14,3 @@ if (gallery) {
         const galleryInterface = new BubbleInterface(cats)
     }
 }
-

@@ -1,0 +1,69 @@
+
+/*
+    Side menu
+ */
+
+.side-menu {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    transform: translateX(150%);
+    width: 90vw;
+    margin: .5rem;
+    border-radius: 1rem;
+    background: var(--color-dark-tab);
+    box-shadow: 0 3px 15px rgba(63, 63, 63, 0.32);
+}
+
+.side-menu[data] {
+
+}
+
+.side-menu__header {
+    display: flex;
+    align-items: center;
+    margin: 1.5em;
+}
+
+.side-menu__header .logo {
+    height: 2.7em;
+}
+
+.side-menu__header .app-name {
+    color: white;
+    font-family: Lexend, sans-serif;
+    margin-left: 1em;
+    margin-right: auto;
+}
+
+.side-menu-nav {
+    margin: 1.5em;
+}
+
+.side-menu-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.side-menu-nav h2 {
+    font-size: 1.2em;
+    color: white;
+    font-family: Poppins, sans-serif;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.side-menu-nav a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    padding: 1.2em;
+    border-radius: .5rem;
+}
+
+.side-menu-nav img {
+    width: 1.8rem;
+    height: 1.8rem;
+}
