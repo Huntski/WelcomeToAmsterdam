@@ -1,7 +1,9 @@
 import cats from './store/cats.js'
 import shops from './store/shops.js'
-
 import BubbleInterface from "./modules/BubbleInterface.js"
+import {createToggleSideMenuEvent} from "./modules/SideMenu.js"
+
+createToggleSideMenuEvent()
 
 const gallery = document.querySelector('#gallery')
 
@@ -13,20 +15,3 @@ if (gallery) {
     }
 }
 
-const sideMenu = document.querySelector('.side-menu')
-
-function toggleSideMenu() {
-    sideMenu.classList.toggle('active')
-}
-
-function createToggleSideMenuEvent() {
-    const toggleElements = ['.hamburger-button', '.button-close', '.content-blur']
-
-    toggleElements.forEach(selector => {
-        const element = document.querySelector(selector)
-
-        element.onclick = toggleSideMenu
-    })
-}
-
-createToggleSideMenuEvent()

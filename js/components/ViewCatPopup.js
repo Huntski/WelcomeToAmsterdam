@@ -1,5 +1,4 @@
 import {closeBubblePopup} from "../modules/composables/ViewBubble.js";
-import {checkGalleryBoundary} from "../modules/composables/GalleryBounds.js";
 
 export function ViewCatPopup(data) {
     const nodeElement = document.createElement('div')
@@ -12,7 +11,7 @@ export function ViewCatPopup(data) {
         <img src="${picture}" alt="Image of cat being cute.">
     
         <button class="button-close">
-            <svg viewBox="0 0 63 63" fill="none" stroke="white">
+            <svg viewBox="0 0 63 63" fill="none" stroke="white"> 
                 <path d="M10 10.1899L53 53.1899" stroke-width="19" stroke-linecap="round"/>
                 <path d="M53 10.1899L10 53.1899" stroke-width="19" stroke-linecap="round"/>
             </svg>
