@@ -1,14 +1,15 @@
 import {closeBubblePopup} from "../modules/composables/bubblepopup.js"
 
-export function CatBubblePopup(data) {
+export function StoreBubblePopup(data) {
     const nodeElement = document.createElement('div')
     nodeElement.classList.add('bubble-popup')
 
-    const picture = './img/cats/' + data
+    const picture = './img/shops/' + data.pictures[0]
+    const name = data.name
 
     nodeElement.innerHTML = `
     <div class="bubble-popup__top-section">
-        <img src="${picture}" alt="Image of cat being cute.">
+        <img src="${picture}" alt="Picture of the store: ${name}">
     
         <button class="button-close">
             <svg viewBox="0 0 63 63" fill="none" stroke="white"> 
@@ -28,27 +29,20 @@ export function CatBubblePopup(data) {
         </div>
     </div>
     
-    <div class="bubble-popup__comments">
-        <div class="comment">
-            <img class="comment__avatar" src="./img/avatars/first-profilepic.jpeg" alt="Profile picture">
-         
-            <div>
-                <h3 class="comment__username">Hannibal</h3>
-                <p class="comment__message">OMG super cute!!</p>
-            </div>
-        </div>
-        
-        <div class="comment">
-            <img class="comment__avatar" src="./img/avatars/ikmetkat.jpeg" alt="Profile picture">
-         
-            <div>
-                <h3 class="comment__username">Wieb</h3>
-                <p class="comment__message">Where did you find this cutie?</p>
-            </div>
-        </div>
+    <div class="bubble-popup__types">
+        <span>Japanese</span>
+        <span>Korea</span>
     </div>
     
-    <input type="text" placeholder="Comment" class="comment-input-field">
+    <div class="bubble-popup__info">
+        <p>Stadsplein 95, 1181 ZM Amstelveen</p>
+        <p><span>Telefoon:</span> 020 312 1237</p>
+    </div>
+
+    
+    <button class="bubble-popup__button">
+        <span>START</span>
+    </button>
     `
 
     nodeElement.querySelector('.button-close').onclick = closeBubblePopup

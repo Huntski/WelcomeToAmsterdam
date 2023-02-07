@@ -23,7 +23,7 @@ export function createMovableGallery() {
         yPosition = moveY
     }
 
-    function touchEndEvent(e) {
+    function touchEndEvent() {
         xPosition = moveX
         yPosition = moveY
 
@@ -31,7 +31,6 @@ export function createMovableGallery() {
     }
 
     function touchMoveEvent(e) {
-
         const touch = e.changedTouches[0]
 
         const moveDistanceX = touch.clientX - xTouchStartAt

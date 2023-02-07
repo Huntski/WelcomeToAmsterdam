@@ -1,7 +1,8 @@
 import {createMovableGallery, moveBubbleToCenterOfScreen} from "./composables/movablegallery.js"
 import {usingMobileUserAgent} from "./composables/useragent.js"
-import {CatBubblePopup} from "../components/catbubblepopup.js";
-import {openBubblePopup} from "./composables/bubblepopup.js";
+import {CatBubblePopup} from "../components/catbubblepopup.js"
+import {openBubblePopup} from "./composables/bubblepopup.js"
+import {StoreBubblePopup} from "../components/storebubblepopup.js"
 
 export class BubbleInterface {
 
@@ -65,15 +66,21 @@ export class BubbleInterface {
         const element = document.createElement('div')
         element.classList.add('bubble')
 
+        let bubblePopupElement
+
         if (typeof bubble === 'object') {
             const shop_picture = './img/shops/' + bubble.pictures[0]
             element.style.backgroundImage = `url(${shop_picture})`
+
+            bubblePopupElement = StoreBubblePopup(bubble)
         }  else {
             const picture = './img/cats/' + bubble
             element.style.backgroundImage = `url(${picture})`
+
+            bubblePopupElement = CatBubblePopup(bubble)
         }
 
-        const popupElement = CatBubblePopup(bubble)
+        const popupElement = bubblePopupElement
 
         element.onclick = e => {
             if (e.target === element) {
