@@ -1,6 +1,47 @@
 .landing-page {
     padding-bottom: 100px;
+    background: #F5F5F5;
+    font-family: Lexend, Helvetica, Arial, sans-serif;
 }
+
+p {
+    font-size: .9em;
+    font-family: Poppins, Lexend, sans-serif;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/*
+    Button Primary Rounded
+ */
+
+.button--rounded {
+    background: #55A3FF;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 60px;
+    font-size: 1em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.button--rounded img {
+    width: 20px;
+    rotate: 30deg;
+}
+
 
 .headline {
     position: relative;
@@ -40,17 +81,17 @@
     position: relative;
     z-index: 3;
     padding-top: 15px;
+    margin-bottom: 40px;
 }
 
 .introduction svg {
     position: absolute;
     z-index: -1;
-    top: 0;
-    margin-top: -11vh;
+    top: -11vh;
 }
 
 .introduction__contents {
-    padding: 0 50px;
+    padding: 0 30px;
 }
 
 .introduction__contents h3 {
@@ -59,11 +100,111 @@
     margin-bottom: 13px;
 }
 
-.introduction__contents p {
-    font-size: .8em;
+.introduction__contents p:last-child {
+    text-align: right;
 }
 
-.introduction__contents p:last-child {
-    margin-top: 10px;
-    text-align: right;
+.shopping {
+    position: relative;
+    z-index: 3;
+    padding: 50px 20px 20px;
+}
+
+.shopping svg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.shopping__contents {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.shopping__contents p {
+    margin-top: 20px;
+}
+
+.cats {
+    position: relative;
+}
+
+.cats > svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    object-fit: cover;
+}
+
+.cats__contents {
+    position: relative;
+    z-index: 1;
+    padding: 60px 20px 0 20px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cats__heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cat-icon {
+    width: 40px;
+    color: black;
+    rotate: -20deg;
+}
+
+.cats .button--rounded {
+    background: #F54949;
+}
+
+.explore {
+    position: relative;
+    margin-top: 100px;
+}
+
+.explore > svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.explore__contents {
+    position: relative;
+    z-index: 2;
+    padding: 50px 50px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.explore__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.explore__heading h2 {
+    width: 200px;
+    line-height: 1.3;
+}
+
+.heart-icon {
+    width: 50px;
+    color: #F54949;
+}
+
+.explore .button--rounded {
+    background: #E9B249;
 }
